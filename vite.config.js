@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/VueJS-Portfolio/',
   plugins: [
     vue(),
     //VueDevTools(),
@@ -15,7 +16,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: process.env.NODE_ENV === 'production'
-    ? '/VueJS-Portfolio/' // Use the repository name here
-    : '/'
 })
