@@ -31,6 +31,10 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Bootstrap
+        run: npm install bootstrap@latest
+      - name: Sass
+        run: npm install sass
       - name: Build
         run: npm run build
       - name: Setup Pages
