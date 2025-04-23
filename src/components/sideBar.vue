@@ -38,6 +38,7 @@ nav
         display: block
         text-decoration: none
         color: black
+        font-size: 200%
     a:hover
         color: white
         text-decoration: underline
@@ -54,4 +55,53 @@ nav
     background: linear-gradient(90deg,rgba(209, 0, 87, 1) 40%, rgba(255, 79, 152, 1) 100%)
     -webkit-background-clip: text
     color: transparent
+
+@media (max-height: 849px) 
+  nav > a
+    font-size: 175%
+
+@media (max-height: 800px) 
+  nav > a
+    font-size: 150%
+
+@media (max-height: 749px) 
+  nav > a
+    font-size: 125%
+
+@media (max-height: 724px)
+  nav > a
+    font-size: 100%
+
+/* For smaller screens (phones) */
+@media (max-width: 720px) 
+    .col-3 
+      display: none
+    
+    .col-9 
+      width: 100%
+    
+    .full-height-section 
+      font-size: 1.5rem
+
+/* For Iphopne X */
+@media (max-width: 1125px) and (max-height: 2436px) 
+    .col-3 
+      display: none
+    
+    .col-9 
+      width: 100%
+    
+    .full-height-section 
+      font-size: 1.5rem
+
+/* For Redmi 7 */
+@media (max-width: 720px) and (max-height: 1520px) 
+    .col-3 
+      display: none
+    
+    .col-9 
+      width: 100%
+    
+    .full-height-section 
+      font-size: 1.5rem
 </style>

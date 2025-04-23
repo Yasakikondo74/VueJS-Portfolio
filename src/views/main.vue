@@ -29,48 +29,48 @@ const contentWrapper = ref(null)
 const currentSection = ref(0)
 
 const scrollToSection = (index) => {
-  if (contentWrapper.value) {
-    const element = document.getElementById(`section-${index}`)
-    if (element) {
-      contentWrapper.value.scrollTo({
-        top: element.offsetTop,
-        behavior: 'smooth',
-      })
-      currentSection.value = index
+    if (contentWrapper.value) {
+        const element = document.getElementById(`section-${index}`)
+        if (element) {
+        contentWrapper.value.scrollTo({
+            top: element.offsetTop,
+            behavior: 'smooth',
+        })
+        currentSection.value = index
+        }
     }
-  }
 }
 
 const scrollDown = () => {
-  const nextSection = currentSection.value + 1
-  const maxSections = contentWrapper.value ? contentWrapper.value.children.length - 1 : 0
-  if (nextSection <= maxSections) {
-    scrollToSection(nextSection)
-  }
+    const nextSection = currentSection.value + 1
+    const maxSections = contentWrapper.value ? contentWrapper.value.children.length - 1 : 0
+    if (nextSection <= maxSections) {
+        scrollToSection(nextSection)
+    }
 }
 
 const scrollUp = () => {
-  const previousSection = currentSection.value - 1
-  if (previousSection >= 0) {
-    scrollToSection(previousSection)
-  }
+    const previousSection = currentSection.value - 1
+    if (previousSection >= 0) {
+        scrollToSection(previousSection)
+    }
 }
 
 const handleScroll = (event) => {
-  const delta = Math.sign(event.deltaY)
-  if (delta > 0) {
-    scrollDown()
-  } else if (delta < 0) {
-    scrollUp()
-  }
+    const delta = Math.sign(event.deltaY)
+    if (delta > 0) {
+        scrollDown()
+    } else if (delta < 0) {
+        scrollUp()
+    }
 }
 
 const handleKeyDown = (event) => {
-  if (event.key === 'ArrowDown') {
-    scrollDown()
-  } else if (event.key === 'ArrowUp') {
-    scrollUp()
-  }
+    if (event.key === 'ArrowDown') {
+        scrollDown()
+    } else if (event.key === 'ArrowUp') {
+        scrollUp()
+    }
 }
 
 </script>
@@ -80,10 +80,12 @@ const handleKeyDown = (event) => {
     height: 100vh
     background-color: black !important
 
+.row
+    display: flex
+    height: 100vh
+
 .col-3
     background-color: #e8e8e890
-    position: absolute
-    height: 100vh
 
 .col-9
     overflow-y: auto
@@ -96,35 +98,40 @@ const handleKeyDown = (event) => {
 
 .full-height-section
     height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
     scroll-snap-align: start
     color: white
-    font-size: 2rem
-    text-align: center
     
 /* For smaller screens (phones) */
 @media (max-width: 720px) 
-  .col-3 
-    display: none
-  
-  .col-9 
-    width: 100%
-  
-  .full-height-section 
-    font-size: 1.5rem
+    .col-3 
+      display: none
+    
+    .col-9 
+      width: 100%
+    
+    .full-height-section 
+      font-size: 1.5rem
 
+/* For Iphopne X */
+@media (max-width: 1125px) and (max-height: 2436px) 
+    .col-3 
+      display: none
+    
+    .col-9 
+      width: 100%
+    
+    .full-height-section 
+      font-size: 1.5rem
 
-/* For tablets */
-@media (min-width: 721px) and (max-width: 1024px) 
-  .col-3 
-    width: 25%
-  
-  .col-9 
-    width: 75%
-  
-  .full-height-section 
-    font-size: 1.8rem
+/* For Redmi 7 */
+@media (max-width: 720px) and (max-height: 1520px) 
+    .col-3 
+      display: none
+    
+    .col-9 
+      width: 100%
+    
+    .full-height-section 
+      font-size: 1.5rem
 
 </style>
