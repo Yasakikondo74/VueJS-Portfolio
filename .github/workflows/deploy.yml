@@ -36,12 +36,6 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Bootstrap
-        run: npm install bootstrap@latest
-      - name: Sass
-        run: npm install sass
-      - name: vue-router
-        run : npm install vue-router@latest
       - name: Build
         run: npm run build
       - name: Setup Pages

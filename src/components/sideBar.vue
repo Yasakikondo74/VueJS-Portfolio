@@ -4,14 +4,14 @@
     <h1>Yasaki74</h1>
     <p><span>Front/Back End Developer</span> In Vietnam</p>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About Me</a>
-        <a href="#">Services</a>
-        <a href="#">Skills</a>
-        <a href="#">Education</a>
-        <a href="#">Experience</a>
-        <a href="#">Recent Work</a>
-        <a href="#">Contacts</a>
+        <button @click="scroll()" href="#">Home</button>
+        <button @click="scroll()" href="#">About Me</button>
+        <button @click="scroll()" href="#">Services</button>
+        <button @click="scroll()" href="#">Skills</button>
+        <button @click="scroll()" href="#">Education</button>
+        <button @click="scroll()" href="#">Experience</button>
+        <button @click="scroll()" href="#">Recent Work</button>
+        <button @click="scroll()" href="#">Contacts</button>
     </nav>
     <hr>
     <p>
@@ -27,19 +27,22 @@
 
 <style scoped lang="sass">
 .logo
-    width: 50%
+    width: 45%
     margin: 20% 0%
 
 span
     color: cyan
 
 nav
-    a
+    button
         display: block
         text-decoration: none
         color: black
         font-size: 200%
-    a:hover
+        border: none
+        background: none
+
+    button:hover
         color: white
         text-decoration: underline
 
@@ -56,52 +59,54 @@ nav
     -webkit-background-clip: text
     color: transparent
 
+@media (max-height: 949px) 
+    .logo
+        width: 35%
+    h1
+        font-size: 200%
+    p
+        font-size: 100%
+    nav > button
+        font-size: 175%
+
 @media (max-height: 849px) 
-  nav > a
-    font-size: 175%
+    .logo
+        width: 35%
+    h1
+        font-size: 175%
+    p
+        font-size: 90%
+    nav > button
+        font-size: 175%
 
 @media (max-height: 800px) 
-  nav > a
-    font-size: 150%
+    .logo
+        width: 32.5%
+    h1
+        font-size: 150%
+    p
+        font-size: 80%
+    nav > button
+        font-size: 150%
 
 @media (max-height: 749px) 
-  nav > a
-    font-size: 125%
+    .logo
+        width: 30%
+    h1
+        font-size: 150%
+    p
+        font-size: 70%
+    nav > button
+        font-size: 125%
 
 @media (max-height: 724px)
-  nav > a
-    font-size: 100%
-
-/* For smaller screens (phones) */
-@media (max-width: 720px) 
-    .col-3 
-      display: none
+    .logo
+        width: 27.5%
+    h1
+        font-size: 125%
+    p
+        font-size: 70%
+    nav > button
+        font-size: 100%
     
-    .col-9 
-      width: 100%
-    
-    .full-height-section 
-      font-size: 1.5rem
-
-/* For Iphopne X */
-@media (max-width: 1125px) and (max-height: 2436px) 
-    .col-3 
-      display: none
-    
-    .col-9 
-      width: 100%
-    
-    .full-height-section 
-      font-size: 1.5rem
-
-/* For Redmi 7 */
-@media (max-width: 720px) and (max-height: 1520px) 
-    .col-3 
-      display: none
-    
-    .col-9 
-      width: 100%
-    
-    .full-height-section 
-      font-size: 1.5rem
 </style>
